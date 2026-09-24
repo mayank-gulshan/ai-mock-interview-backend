@@ -1,6 +1,7 @@
 package interview
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -53,6 +54,8 @@ func (h *Handler) getQuestions(c *gin.Context) {
 		// NOTE: the Kotlin controller has no try/catch, so an exception here
 		// (e.g. Gemini call failing, or the JSON not matching QuestionAnswer)
 		// bubbles up as Spring Boot's default 500 Internal Server Error.
+		log.Printf("getQuestions failed (role=%s, difficulty=%s): %v", role, difficulty, err)
+
 		c.JSON(http.StatusInternalServerError, apperrors.ErrorResponse{Message: "Internal server error"})
 		return
 	}

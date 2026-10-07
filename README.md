@@ -1,7 +1,4 @@
-# AI Mock Interview Backend — Go port
-
-A 1:1 behavioral port of the original Kotlin/Spring Boot backend
-(`Ai_Mock_Interview_Backend`) to Go, using Gin + GORM.
+# AI Mock Interview Backend — Go 
 
 ## Original architecture (summary)
 
